@@ -6,16 +6,19 @@ export interface IColor {
 
 const hexToRgb = (hexValue: string): number[] => {
   const hex = hexValue.replace('#', '')
-  const r = parseInt(hex.substring(0, 2), 16)
-  const g = parseInt(hex.substring(2, 4), 16)
-  const b = parseInt(hex.substring(4, 6), 16)
+  const r = Number.parseInt(hex.substring(0, 2), 16)
+  const g = Number.parseInt(hex.substring(2, 4), 16)
+  const b = Number.parseInt(hex.substring(4, 6), 16)
   return [r, g, b]
 }
 
 export const getColor = (colorValue = '#6C65E5'): IColor => {
-  let r, g, b
+  let r: number
+  let g: number
+  let b: number
+
   if (colorValue.startsWith('#')) {
-    ;[r, g, b] = hexToRgb(colorValue)
+    [r, g, b] = hexToRgb(colorValue)
   } else {
     const tempEl = document.createElement('div')
     tempEl.style.color = colorValue
@@ -24,11 +27,12 @@ export const getColor = (colorValue = '#6C65E5'): IColor => {
     document.body.removeChild(tempEl)
     const matches = computedColor.match(/rgba?\((\d+), (\d+), (\d+)/)
     if (matches) {
-      ;[r, g, b] = matches.slice(1).map(parseFloat)
+      [r, g, b] = matches.slice(1).map(Number.parseFloat)
     } else {
-      ;[r, g, b] = [0, 0, 0]
+      [r, g, b] = [0, 0, 0]
     }
   }
+
   const rgb = `${r}, ${g}, ${b}`
   return {
     light: `rgba(${rgb}, .1)`,

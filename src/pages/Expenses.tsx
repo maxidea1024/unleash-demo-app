@@ -5,10 +5,10 @@ import { ExpensesChart } from '../components/ExpensesChart'
 import { ExpensesTable } from '../components/ExpensesTable'
 
 export const Expenses = () => {
-  const step1 = useFlag('demoApp.step1')
-  const step4 = useVariant('demoApp.step4')
+  const showChart = useFlag('demoApp.showChart')
+  const titleColor = useVariant('demoApp.titleColor')
 
-  const color = step4.enabled ? getColor(step4.payload?.value) : getColor()
+  const color = titleColor.enabled ? getColor(titleColor.payload?.value) : getColor()
 
   return (
     <>
@@ -29,7 +29,7 @@ export const Expenses = () => {
           <Icon icon='ic:baseline-plus' />
         </div>
       </div>
-      {step1 && <ExpensesChart color={color} />}
+      {showChart && <ExpensesChart color={color} />}
       <ExpensesTable color={color} />
     </>
   )
