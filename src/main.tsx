@@ -5,19 +5,17 @@ import "./index.css";
 import { FlagProvider, type IConfig } from "@unleash/proxy-client-react";
 import { random } from "./util/random.ts";
 
-// let userId = localStorage.getItem("userId");
-// if (!userId) {
-//   userId = random(100000000).toString();
-//   localStorage.setItem("userId", userId);
-// }
-
-const userId = random(100000000).toString();
+let userId = localStorage.getItem("userId");
+if (!userId) {
+	userId = random(100_000_000).toString();
+	localStorage.setItem("userId", userId);
+}
 
 const config: IConfig = {
-	url: "https://app.unleash-hosted.com/demo/api/frontend",
+	url: "http://localhost:4242/api/frontend",
 	clientKey:
-		"demo-app:dev.bf8d2a449a025d1715a28f218dd66a40ef4dcc97b661398f7e05ba67",
-	refreshInterval: 2,
+		"*:development.0e5f799e51a6c2a903018df7cb214a19054700b426d485910edfd837",
+	refreshInterval: 5,
 	appName: "ganpa-demo-app",
 	context: { userId },
 };

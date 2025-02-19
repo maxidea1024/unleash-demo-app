@@ -4,7 +4,7 @@ export const Header = () => (
     <a
       href='https://app.unleash-hosted.com/demo'
       target='_blank'
-      className='bg-unleash px-6 py-1.5 font-bold rounded text-sm'
+      className='bg-unleash px-6 py-1.5 font-bold rounded text-sm' rel="noreferrer"
     >
       Open Ganpa
     </a>

@@ -1,4 +1,4 @@
-import { IColor } from '../util/color'
+import type { IColor } from '../util/color'
 import { random } from '../util/random'
 
 interface IExpensesChartProps {
@@ -38,7 +38,8 @@ export const ExpensesChart = ({ color }: IExpensesChartProps) => {
             <div
               className='rounded-md animate-expand'
               style={{ height: `${month.value}px`, backgroundColor }}
-            ></div>
+            >
+            </div>
             <span className='hidden sm:block text-xs mt-1 text-slate-600'>
               {month.label}
             </span>

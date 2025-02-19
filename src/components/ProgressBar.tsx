@@ -1,4 +1,4 @@
-import { IColor } from '../util/color'
+import type { IColor } from '../util/color'
 
 interface IProgressBarProps {
   value: number
@@ -10,6 +10,7 @@ export const ProgressBar = ({ value, color }: IProgressBarProps) => (
     <div
       className='rounded animate-expandHorizontal'
       style={{ width: `${value}%`, backgroundColor: color.dark }}
-    ></div>
+    >
+    </div>
   </div>
 )

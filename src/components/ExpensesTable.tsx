@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import { IColor, getColor } from '../util/color'
+import { type IColor, getColor } from '../util/color'
 import { random } from '../util/random'
 import { COMPANIES } from '../util/constants'
 import { ProgressBar } from './ProgressBar'
