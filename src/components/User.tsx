@@ -12,7 +12,7 @@ export const User = () => {
   return (
     <div className='flex flex-col items-center gap-2 w-full sm:max-w-xs'>
       <img
-        src='/unleash.svg'
+        src='/ganpa.svg'
         alt='User profile picture'
         className='h-20 w-20 rounded-xl'
       />
